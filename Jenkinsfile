@@ -12,11 +12,7 @@ pipeline{
 			            url: 'https://github.com/HariReddy910/game-of-life.git']]])
 			    }
 		         }
-	    stage('Build-stage'){
-		    steps{
-		    sh label: '', script: 'mvn package'
-		    }
-	    }
+	   
 	    
         }
 }
