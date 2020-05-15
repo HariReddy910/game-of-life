@@ -17,6 +17,10 @@ pipeline{
 		    steps{ 
 			  sh label: '', script: 'mvn package' 
 		    } }
-	    
+	     stage("archiveArtifacts"){
+           steps{
+                   archiveArtifacts '**/*.war'
+                   }
+             }
         }
 }
