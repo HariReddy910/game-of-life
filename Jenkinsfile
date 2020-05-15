@@ -13,6 +13,10 @@ pipeline{
 			    }
 		         }
 	   
+	    stage('Build-stage'){ 
+		    steps{ 
+			  sh label: '', script: 'mvn package' 
+		    } }
 	    
         }
 }
