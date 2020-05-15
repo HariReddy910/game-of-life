@@ -24,7 +24,7 @@ pipeline{
              }
 	    stage("Deploying"){
                 steps{
-                  sh label: '', script: 'scp /var/jenkins_home/workspace/game-of-life/gameoflife-web/target/gameoflife.war ubuntu@3.22.175.173://var/lib/tomcat8/webapps/harindra.war'
+                  sh label: '', script: 'scp /var/jenkins_home/workspace/game-of-life/gameoflife-web/target/gameoflife.war ubuntu@3.22.175.173://var/lib/tomcat9/webapps/gameoflife.war'
                 }
             }
         }
