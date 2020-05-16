@@ -495,4 +495,18 @@
             </reporting>
         </profile>
     </profiles>
+    <distributionManager>
+<repositary>
+          <id>releases</id>
+          <name>Releases</name>
+          <url>http://3.136.87.11:8081/nexus/content/repositories/releases/</url>
+</repositary>
+
+<SnapshotRepositary>
+          <id>Snapshots</id>
+          <name>Snapshots</name>
+          <url>http://3.136.87.11:8081/nexus/content/repositories/rSnapshots/</url>
+</SnapshotRepositary>
+        
+</distributionManager>
 </project>
