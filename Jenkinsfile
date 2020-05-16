@@ -12,12 +12,24 @@ pipeline{
 			            url: 'https://github.com/HariReddy910/game-of-life.git']]])
 			    }
 		         }
-	                stage('Build-stage'){ 
+         stage('Build-stage'){ 
 		      steps{ 
-			  sh label: '', script: 'mvn package' 
-		             } 
+			   sh label: '', script: 'mvn package' 
+		           } 
 	                 }
-	    
+         stage("archiveArtifacts"){
+                      steps{
+                           archiveArtifacts '**/*.war'
+                         }
+                      }
+	    stage("Deploying"){
+                steps{
+         sh label: '', script: 'scp /var/jenkins_home/workspace/Game-of-life@2/gameoflife-web/target/gameoflife.war ubuntu@:18.217.245.91:/var/lib/tomcat9/webapps/gameoflife.war'                }
+            }
+	   
+        }
+}
+ 
 	   
         }
 }
