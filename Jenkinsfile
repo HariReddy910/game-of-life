@@ -22,7 +22,11 @@ pipeline{
                            archiveArtifacts '**/*.war'
                          }
                       }
- 
-	   
-        }
+           stage("deploy-to-appserver"){
+                      steps{
+	   sh label: '', script: 'scp /var/jenkins_home/workspace/Game-of-life@2/gameoflife-web/target/gameoflife.war ubuntu@18.217.245.91:/var/lib/tomcat9/webapps/gameoflife.war'
+		      }
+	   }
+		      
+	}
 }
