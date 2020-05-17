@@ -46,15 +46,7 @@ pipeline{
             }
        }
      }
-	     post {
-        success {  // notify users when the Pipeline is successful
-            mail(to: 'harireddy090@gmail.com', subject: "Pipeline Complete: ${currentBuild.fullDisplayName}", body: "Was successfully deployed. ${env.BUILD_URL}")
-        }
-        failure {  // notify users when the Pipeline fails
-            mail(to: 'harireddy090@gmail.com', subject: "Failed Pipeline: ${currentBuild.fullDisplayName}", body: "Something is wrong with ${env.BUILD_URL}")  
-        }
-     
-     }    
+	     
     }
 }
 		      
